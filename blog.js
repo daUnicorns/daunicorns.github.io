@@ -5,7 +5,7 @@ function blogobject(title,date,content){
     this.date = date;
     this.content = content;
 }
-/*This function will when finished extract title, date and content automatically form a file.
+/* This function will when finished extract title, date and content automatically form a file.
 For the time being the title,date and content have been manually written below.
 What this currently does is loop through the content and write it to the page using html
 */
