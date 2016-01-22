@@ -1,11 +1,14 @@
 
-
+/* This is a blog object for storing blog information */
 function blogobject(title,date,content){
     this.title = title;
     this.date = date;
     this.content = content;
 }
-
+/*This function will when finished extract title, date and content automatically form a file.
+For the time being the title,date and content have been manually written below.
+What this currently does is loop through the content and write it to the page using html
+*/
 function blogcontent(){
   title = ['blog1','blog2','blog3','blog4','blog5'];
   date = ['21/01/16','22/02/16','23/02/16','24/02/16','25/02/16'];
