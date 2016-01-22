@@ -2,7 +2,7 @@
 http://daunicorns.github.io/index.html
 
 ## What?
-We will be creating a team blog where we can introduce ourselves, blog about our work and to share useful and interesting information. 
+We will be creating a team blog where we can introduce ourselves, blog about our work and share useful and interesting information. 
 
 ##Pages
 * Blog page - home page with blog
