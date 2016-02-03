@@ -26,6 +26,7 @@ var appendQuestionResultsToDOM = function(results) {
     document.write('<p>'+ el.content+'</p>');
     document.write('<p>'+ el.date+'</p>');
     document.write('</article>');
+    // twitter
   });
 };
 
@@ -49,3 +50,8 @@ document.getElementById('news-topic').addEventListener('submit',function(e){
     console.log(topic);
     getUnanswered(topic);
 });
+
+var guardianAPI = "";
+var guardianSearch = "";
+
+var guardianURL = "http://content.guardianapis.com/search?" + guardianAPI + "&q" + guardianSearch + "&show-elements=all&show-fields=headline,thumbnail,body";
