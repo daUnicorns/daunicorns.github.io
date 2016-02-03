@@ -4,7 +4,6 @@
     <link rel="stylesheet" type="text/css" href="home.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
-    <script src="newspage.js"></script>
     <title> daUnicorns amazing blog page </title>
   </head>
   <body>
@@ -29,11 +28,16 @@
   <!-- search bar -->
   <div class = "newspaperman">
     <img class ="readingnewspaper blogcontent" src="http://45.media.tumblr.com/4c29bf59c4c3b76df861d06d0ba9825f/tumblr_myj1ylOeaQ1rgr7x3o1_500.gif"/>
-
+    <form id="news-topic">
+    		<input type="text" placeholder='News Topic' name="topic" size="30" autofocus required>
+  			<input type="submit" value="Submit">
+    </form>
   </div>
       <div class='newsstory'>
-        <script>newscontent();</script>
+        <div id='results'></div>
+        <!-- <script>newscontent();</script> -->
       </div>
 <!-- // url for cat https://www.google.co.uk/search?q=peering+over+spectacles+cartoon&safe=off&espv=2&biw=1307&bih=683&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjtxpq_zdvKAhULshQKHdW9BW8Q_AUIBigB#safe=off&tbm=isch&q=reading+newspaper+cartoon+png&imgrc=wgtNshFL44F8cM%3A */  -->
+<script src="newspage.js"></script>
   </body>
 </html>
