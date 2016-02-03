@@ -296,3 +296,20 @@ div:nth-child(3) > div.top > div {
   .nav-links { padding-left: 0px; }
 
 }
+/* newspage */
+.readingnewspaper {
+  margin-right: 40%;
+  margin-left: 40%;
+}
+.newsstory article{
+  margin-bottom: 100px;
+  padding: 2em 4em;
+  border: 1px solid black;
+  border-radius: 2em;
+}
+.newsstory{
+  margin:5% 15%;
+}
+.topspace {
+  height: 110px;
+}
