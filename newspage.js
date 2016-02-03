@@ -31,3 +31,7 @@ function newscontent(){
     // twitter
   }
 }
+var guardianAPI = "";
+var guardianSearch = "";
+
+var guardianURL = "http://content.guardianapis.com/search?" + guardianAPI + "&q" + guardianSearch + "&show-elements=all&show-fields=headline,thumbnail,body";
