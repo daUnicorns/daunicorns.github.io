@@ -1,33 +1,61 @@
+//
+// var parseQuestionData = function(questions) {
+//     // JSON.parse(questions).items.sort(function(a,b) {
+//     //     return a.owner.reputation - b.owner.reputation;
+//     // });
+//
+//     var result = [];
+//
+//     JSON.parse(questions).items.forEach(function(el) {
+//         result.push({
+//             title: el.title,
+//             link: el.link,
+//             creation: el.creation_date,
+//             name: el.owner.display_name,
+//             rep: el.owner.reputation,
+//         });
+//     });
+//     console.log(result);
+//     return result;
+// };
+//
+// var appendQuestionResultsToDOM = function(results) {
+//   results.forEach(function(el) {
+//     document.write('<article>');
+//     document.write('<h2>'+ el.title +'</h2>');
+//     document.write('<p>'+ el.content+'</p>');
+//     document.write('<p>'+ el.date+'</p>');
+//     document.write('</article>');
+//   });
+// };
+//
+//
+//
+// var getUnanswered = function(topic) {
+//   var request = new XMLHttpRequest();
+//   var url = "https://api.stackexchange.com/2.2/questions/unanswered?order=desc&sort=activity&tagged=" + topic + "&site=stackoverflow";
+//   request.open("GET", url, false);
+//   request.send();
+//
+//   var results = parseQuestionData(request.response);
+//   appendQuestionResultsToDOM(results);
+// };
+var form = document.getElementById('news-topic');
+if(form){
+  form.addEventListener('submit',function(e){
+  	  e.preventDefault();
+      document.getElementById('results').innerHTML+="";
+      var topic = document.querySelector('#news-topic input[type="text"]').value;
+      console.log(topic);
+      getUnanswered(topic);
+  });
 
-/* This is a blog object for storing blog information */
-function newsobject(title,date,content){
-    this.title = title;
-    this.date = date;
-    this.content = content;
 }
-/* This function will when finished extract title, date and content automatically form a file.
-For the time being the title,date and content have been manually written below.
-What this currently does is loop through the content and write it to the page using html
-*/
-function newscontent(){
-  title = ['blog1','blog2','blog3','blog4','blog5'];
-  date = ['21/01/16','22/02/16','23/02/16','24/02/16','25/02/16'];
-  content = ['Bacon ipsum dolor amet tri-tip ribeye rump salami, jowl shank short ribs meatball chicken. Frankfurter kevin kielbasa, capicola spare ribs corned beef pork belly sausage cupim short loin pork ham hock chicken pork loin.',
-'Bacon ipsum dolor amet tri-tip ribeye rump salami, jowl shank short ribs meatball chicken. Frankfurter kevin kielbasa, capicola spare ribs corned beef pork belly sausage cupim short loin pork ham hock chicken pork loin.',
-'Bacon ipsum dolor amet tri-tip ribeye rump salami, jowl shank short ribs meatball chicken. Frankfurter kevin kielbasa, capicola spare ribs corned beef pork belly sausage cupim short loin pork ham hock chicken pork loin.',
-'Bacon ipsum dolor amet tri-tip ribeye rump salami, jowl shank short ribs meatball chicken. Frankfurter kevin kielbasa, capicola spare ribs corned beef pork belly sausage cupim short loin pork ham hock chicken pork loin.',
-'Bacon ipsum dolor amet tri-tip ribeye rump salami, jowl shank short ribs meatball chicken. Frankfurter kevin kielbasa, capicola spare ribs corned beef pork belly sausage cupim short loin pork ham hock chicken pork loin.'];
-  blogs = [];
-  for (var i=0; i<title.length; i++){
-    blogs[i] = new newsobject(title[i],date[i],content[i]);
-  }
-  for (i=0; i<blogs.length; i++){
-    // image
-    document.write('<article>');
-    document.write('<h2>'+blogs[i].title+'</h2>');
-    document.write('<p>'+blogs[i].content+'</p>');
-    document.write('<p>'+blogs[i].date+'</p>');
-    document.write('</article>');
-    // twitter
-  }
-}
+
+// document.getElementById('news-topic').addEventListener('submit',function(e){
+// 	  e.preventDefault();
+//     document.getElementById('results').innerHTML+="";
+//     var topic = document.querySelector('#news-topic input[type="text"]').value;
+//     console.log(topic);
+//     getUnanswered(topic);
+// });
