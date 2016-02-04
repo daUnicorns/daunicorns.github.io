@@ -1,16 +1,3 @@
-var appendFilmsToDOM = function(results) {
-  console.log(results)
-  var filmresults = new Array;
-  for(var o in results) {
-    filmresults.push(results[o]);
-}
-
-   console.log(filmresults)
-   console.log(filmresults[0], filmresults[1], filmresults[8], filmresults[15], filmresults[13])
-
-};
-
-
 var getFilmDeets = function (topic) {
   var xhr = new XMLHttpRequest();
   var parsedResponse;
@@ -27,4 +14,24 @@ var getFilmDeets = function (topic) {
   var array = parsedResponse;
   console.log(array);
   appendFilmsToDOM(array);
+};
+
+  document.getElementById('filmresults').innerHTML+="";
+  var topic = document.querySelector('#news-topic input[type="text"]').value;
+  // console.log(topic);
+  getArticals(topic);
+  getFilmDeets(topic);
+
+
+
+var appendFilmsToDOM = function(results) {
+  console.log(results);
+  var filmresults = new Array;
+  for(var o in results) {
+    filmresults.push(results[o]);
+}
+
+   console.log(filmresults);
+   console.log(filmresults[0], filmresults[1], filmresults[8], filmresults[15], filmresults[13]);
+
 };
