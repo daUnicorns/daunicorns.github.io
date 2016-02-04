@@ -1,3 +1,23 @@
+var getFilmDeets = function (topic) {
+  var xhr = new XMLHttpRequest();
+  var parsedResponse;
+  var url = "http://www.omdbapi.com/?t="+ topic;
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200)   {
+      parsedResponse = JSON.parse(xhr.response);
+      // var results = parseQuestionData(parsed.response.results);
+    }
+  };
+  xhr.open("GET", url, false);
+  xhr.send();
+  var array = parsedResponse;
+  console.log(array);
+  appendFilmsToDOM(array);
+};
+
+
+
 var getArticals = function(topic) {
   var req = new XMLHttpRequest();
   var parsed;
@@ -13,15 +33,19 @@ var getArticals = function(topic) {
   req.open("GET", url, false);
   req.send();
   var arr = parsed.response.results;
+
   appendArticlesToDOM(arr);
+
 };
 
 document.getElementById('news-topic').addEventListener('submit',function(e){
   e.preventDefault();
   document.getElementById('results').innerHTML+="";
+  document.getElementById('filmresults').innerHTML+="";
   var topic = document.querySelector('#news-topic input[type="text"]').value;
   // console.log(topic);
-  var resultsArray = getArticals(topic);
+  getArticals(topic);
+  getFilmDeets(topic);
 });
 
 
@@ -36,6 +60,18 @@ var appendArticlesToDOM = function(results) {
   });
 };
 
+
+var appendFilmsToDOM = function(results) {
+  console.log(results)
+  var filmresults = new Array;
+  for(var o in results) {
+    filmresults.push(results[o]);
+}
+
+   console.log(filmresults)
+   console.log(filmresults[0], filmresults[1], filmresults[8], filmresults[15], filmresults[13])
+
+};
 // var parseQuestionData = function(articles) {
 //     // var parsedResults = JSON.parse(articles.results);
 //
