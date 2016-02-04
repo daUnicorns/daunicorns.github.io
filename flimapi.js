@@ -33,7 +33,7 @@ document.getElementById('news-movie').addEventListener('submit',function(e){
     }
 
     document.getElementById("filmresults").innerHTML =
-    "<article> <div id='poster'><img id = 'leposter' src='http://25.media.tumblr.com/tumblr_m2cb1rOqtk1ql201ao2_500.gif'/></div> <div id='filmdetails'> <h1 id='title'>" + filmresults[0] + "</h1> <h2 id='year'>" +  filmresults[1] + "</h2> <p id='cast'><strong>Actors : </strong>" + filmresults[8] + "</p> <p id='rating'><strong>IMDB rating : </strong>"+ filmresults[15] + "</p> </div> <div id='plot'> <p id='plotcontent'><strong>Plot : </strong>" + filmresults[9] + "</div> </article>";
+    "<article id = 'filmarticle'> <div id='poster'><img id = 'leposter' src='http://vignette3.wikia.nocookie.net/adventuretimewithfinnandjake/images/a/a9/Adventure-time-dance-5046_preview.gif/revision/latest?cb=20110617014146'/></div> <div id='filmdetails'> <h1 id='title'>" + filmresults[0] + "</h1> <h2 id='year'>" +  filmresults[1] + "</h2> <p id='cast'><strong>Actors : </strong>" + filmresults[8] + "</p> <p id='rating'><strong>IMDB rating : </strong>"+ filmresults[15] + "</p> </div> <div id='plot'> <p id='plotcontent'><strong>Plot : </strong>" + filmresults[9] + "</p></div> </article>";
 
 
     // console.log(filmresults);

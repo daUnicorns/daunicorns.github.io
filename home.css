@@ -404,20 +404,28 @@ div:nth-child(3) > div.top > div {
   width: 35%;
   display: inline-block;
   padding: 0;
-
+margin: auto;
 }
 
 #filmdetails {
   width: 40%;
   display: inline-block;
+  margin:auto;
+  text-align: center;
 }
 #leposter{
   border-radius: 2em;
   height: 100%;
+  -webkit-animation: fadein infinite 10s;
+}
+@-webkit-keyframes fadein {
+   0% {    -webkit-filter: hue-rotate(0deg)}
+  50% { -webkit-filter:  hue-rotate(180deg);}
+ 100% {  -webkit-filter: hue-rotate(360deg);}
 }
 
 #plot {
   width: 20%;
   display:inline-block;
-  overflow: scroll;
+  margin: auto;
 }
