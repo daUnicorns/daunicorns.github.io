@@ -297,6 +297,7 @@ div:nth-child(3) > div.top > div {
 .newspaperman h3 {
   color: purple;
   text-shadow: 0.5px 0;
+  text-align: center;
 }
 
 .newspaperman a { font-weight: 700; }
@@ -315,7 +316,7 @@ div:nth-child(3) > div.top > div {
 #news-movie .inputs {
   margin-left: auto;
   margin-right: auto;
-  width: 520px;
+  width: 575px;
 }
 
 #submitBtn {
@@ -336,7 +337,6 @@ div:nth-child(3) > div.top > div {
 #news-movie a {
   text-decoration: none;
   display: block;
-  width: 70%;
   padding-top: 30px;
   text-align: center;
 }
@@ -389,16 +389,18 @@ div:nth-child(3) > div.top > div {
   width: 35%;
   display: inline-block;
   padding: 0;
-margin: auto;
+  margin: auto;
 }
 
 #filmdetails {
   width: 40%;
   display: inline-block;
   margin:auto;
-  text-align: center;
+  vertical-align: top;
+  padding: 0 10px;
 }
 #leposter{
+  vertical-align: top;
   border-radius: 2em;
   height: 100%;
   -webkit-animation: fadein infinite 10s;
@@ -413,14 +415,18 @@ margin: auto;
   width: 20%;
   display:inline-block;
   margin: auto;
+  vertical-align: top;
 }
 
 /****************** media query ********************/
 
-@media screen and (max-width: 1285px) {
+@media screen and (max-width: 1315px) {
   .newspaperman {
     margin: 90px auto 10em auto;
   }
+}
+@media screen and (max-width: 1285px) {
+  #news-movie .inputs { width: 520px; }
 }
 @media screen and (max-width: 1035px) {
   .navbar a { font-size: 23px; }
