@@ -1,4 +1,5 @@
 var getArticals = function(api, movie) {
+
   var req = new XMLHttpRequest();
   var parsed;
   var guardianAPI = "6509f558-5d11-416c-840b-78ccfb4a0837";
@@ -12,7 +13,9 @@ var getArticals = function(api, movie) {
   req.open("GET", url, false);
   req.send();
   var arr = parsed.response.results;
+
   appendArticlesToDOM(arr);
+
 };
 
 document.getElementById('news-movie').addEventListener('submit',function(e){
