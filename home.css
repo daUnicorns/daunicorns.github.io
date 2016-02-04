@@ -277,6 +277,91 @@ div:nth-child(3) > div.top > div {
   color: #C3A3B6;
 }
 
+/****************** NewsPage ********************/
+
+.AT-bg {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.newspaperman {
+  margin: 90px auto 0 auto;
+  width: 55%;
+  padding: 25px;
+  background-color: rgba(255, 192, 203, 0.63);
+  border-radius: 15px;
+}
+
+.newspaperman h3 {
+  color: yellow;
+}
+
+.newspaperman a { font-weight: 700; }
+
+#news-movie input {
+  font-size: 14px;
+  height: 30px;
+  color: rebeccapurple;
+  outline: none;
+  font-weight: 700;
+}
+
+#news-movie .inputs {
+  margin-left: auto;
+  margin-right: auto;
+  width: 520px;
+}
+
+#submitBtn {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 20px auto 0 auto;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: skyblue;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  text-shadow: 1px 1px black;
+}
+
+#news-movie a {
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 70%;
+  padding-top: 30px;
+}
+
+.newsstory h2 {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 80%;
+  padding: 20px 20px;
+  text-align: center;
+  margin: 0 auto 0 auto;
+  text-decoration: overline;
+  text-transform: uppercase;
+  line-height: 1.8em;
+  font-weight: lighter;
+}
+
+.newsstory a { color: #F6B2B2; }
+
+.newsstory p { color: #225C79; }
+
+.newsstory .date {
+    text-align: right;
+    font-style: italic;
+    color: white;
+    font-weight: bolder;
+    text-shadow: 1px 0px;
+}
+
+
 /****************** media query ********************/
 
 @media screen and (max-width: 1035px) {
@@ -304,8 +389,8 @@ div:nth-child(3) > div.top > div {
 .newsstory article{
   margin-bottom: 100px;
   padding: 2em 4em;
-  border: 1px solid black;
   border-radius: 2em;
+  background-color: rgba(195, 163, 182, 0.22);
 }
 .newsstory{
   margin:5% 15%;
