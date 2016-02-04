@@ -12,26 +12,31 @@ var getFilmDeets = function (topic) {
   xhr.open("GET", url, false);
   xhr.send();
   var array = parsedResponse;
-  console.log(array);
+  // console.log(array);
   appendFilmsToDOM(array);
 };
 
+document.getElementById('news-topic').addEventListener('submit',function(e){
+  e.preventDefault();
   document.getElementById('filmresults').innerHTML+="";
   var topic = document.querySelector('#news-topic input[type="text"]').value;
   // console.log(topic);
-  getArticals(topic);
   getFilmDeets(topic);
+});
 
 
+  var appendFilmsToDOM = function(results) {
+    // console.log(results);
+    var filmresults = new Array;
+    for(var o in results) {
+      filmresults.push(results[o]);
+    }
 
-var appendFilmsToDOM = function(results) {
-  console.log(results);
-  var filmresults = new Array;
-  for(var o in results) {
-    filmresults.push(results[o]);
-}
+    document.getElementById("filmresults").innerHTML =
+    "<article> <div id='poster'><img id = 'leposter' src='http://25.media.tumblr.com/tumblr_m2cb1rOqtk1ql201ao2_500.gif'/></div> <div id='filmdetails'> <h1 id='title'>" + filmresults[0] + "</h1> <h2 id='year'>" +  filmresults[1] + "</h2> <p id='cast'><strong>Actors : </strong>" + filmresults[8] + "</p> <p id='rating'><strong>IMDB rating : </strong>"+ filmresults[15] + "</p> </div> <div id='plot'> <p id='plotcontent'><strong>Plot : </strong>" + filmresults[9] + "</div> </article>";
 
-   console.log(filmresults);
-   console.log(filmresults[0], filmresults[1], filmresults[8], filmresults[15], filmresults[13]);
 
-};
+    // console.log(filmresults);
+    console.log(filmresults[0], filmresults[1], filmresults[8], filmresults[15], filmresults[13]);
+
+  };

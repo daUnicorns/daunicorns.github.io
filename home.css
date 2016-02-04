@@ -313,3 +313,26 @@ div:nth-child(3) > div.top > div {
 .topspace {
   height: 110px;
 }
+
+/******************* filmapi ******************/
+#poster {
+  width: 35%;
+  display: inline-block;
+  padding: 0;
+
+}
+
+#filmdetails {
+  width: 40%;
+  display: inline-block;
+}
+#leposter{
+  border-radius: 2em;
+  height: 100%;
+}
+
+#plot {
+  width: 20%;
+  display:inline-block;
+  overflow: scroll;
+}
