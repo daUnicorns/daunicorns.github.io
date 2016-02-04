@@ -32,7 +32,7 @@ var appendArticlesToDOM = function(results) {
   top4.forEach(function(el) {
     var d = el.webPublicationDate;
     var date = d.replace('T', ' at ').replace('Z', '');
-    document.getElementById("results").innerHTML += "<article> <p class='date'> Published the " + date +"</p> <h2><a href=' " + el.webUrl + " '>" +
-    el.webTitle + "</a> </h2 class='article-title'> <p class='content'>" + el.fields.body + "</p></article>";
+    document.getElementById("results").innerHTML += "<article> <p class='date'> Published the " + date +"</p> <h2 class='article-title'><a href=' " + el.webUrl + " '>" +
+    el.webTitle + "</a> </h2> <p class='content'>" + el.fields.body + "</p></article>";
   });
 };

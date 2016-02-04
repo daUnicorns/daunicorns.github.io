@@ -1,3 +1,5 @@
+/************************ SYSTEM GRID *********************/
+
 .grid {
   margin: 5% 10%;
   width: 100%;
@@ -65,12 +67,15 @@
   width: 80%;
 }
 
+/************************ NAV BAR *********************/
+
 body {
   font-family: 'Raleway', sans-serif;
   background-color: #fcffad;
   background-image: url("http://www.transparenttextures.com/patterns/skulls.png");
   margin: 0;
 }
+
 .logo{
   z-index:9999;
   float: left;
@@ -98,16 +103,13 @@ body {
 .navbar a {
   font-size: 1.5em;
   color: #C3A3B6;
-  padding: 2em;
+  padding: 1.5em;
   text-decoration: none;
   text-shadow: rgb(216, 210, 210) 4px 3px 0px;
   font-family: 'Candal', sans-serif;
 }
 .navbar a:hover {
   color: white;
-}
-.navbar h3 {
-  display: inline-block;
 }
 .navbar h3 {
   display: inline-block;
@@ -123,6 +125,8 @@ body {
 body > nav > div > h3:nth-child(2) {
   margin-left: -66px;
 }
+
+/********************** BLOG PAGE ******************/
 
 .image-wrapper {
   position:relative;
@@ -146,18 +150,12 @@ body > nav > div > h3:nth-child(2) {
   margin:5% 15%;
 }
 
-body {
-  font-family: 'Raleway', sans-serif;
-  background-color: #fcffad;
-  background-image: url("http://www.transparenttextures.com/patterns/skulls.png");
-}
-
 .container {
   margin-top: 150px;
   margin-bottom: 80px;
 }
 
-/******************* info links *******************/
+/******************* PROFILE PAGE - info links *******************/
 
 .info {
   margin-left: auto;
@@ -174,7 +172,7 @@ body {
   padding: 0 5px 0 12px;
 }
 
-/****************** rotate animation **************/
+/****************** PROFILE PAGE - rotate animation **************/
 
 .flip-container:hover .flipper {
   transform: rotateY(180deg);
@@ -233,7 +231,7 @@ transform: rotate(-18deg);
 margin-right: 17px;
 }
 
-/****************** Summary style ****************/
+/****************** PROFILE PAGE - Summary style ****************/
 
 .space {
   height: 100px;
@@ -277,13 +275,14 @@ div:nth-child(3) > div.top > div {
   color: #C3A3B6;
 }
 
-/****************** NewsPage ********************/
+/************************** NEWSPAGE ***************************/
 
 .AT-bg {
   position: absolute;
   z-index: -1;
   opacity: 0.7;
   width: 100%;
+  min-width: 1180px;
 }
 
 .newspaperman {
@@ -365,8 +364,6 @@ div:nth-child(3) > div.top > div {
     text-shadow: 1px 0px;
 }
 
-
-/* newspage */
 .readingnewspaper {
   margin-right: 40%;
   margin-left: 40%;
@@ -384,7 +381,7 @@ div:nth-child(3) > div.top > div {
   height: 110px;
 }
 
-/******************* filmapi ******************/
+/******************* NEWSPAGE - filmapi ******************/
 #poster {
   width: 35%;
   display: inline-block;
@@ -413,6 +410,9 @@ div:nth-child(3) > div.top > div {
   .newspaperman {
     margin: 90px auto 10em auto;
   }
+}
+@media screen and (max-width: 1155px) {
+  nav-bar a { padding: 1em;}
 }
 @media screen and (max-width: 1035px) {
   .navbar a { font-size: 23px; }
