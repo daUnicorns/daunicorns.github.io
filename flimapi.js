@@ -16,10 +16,10 @@ var getFilmDeets = function (topic) {
   appendFilmsToDOM(array);
 };
 
-document.getElementById('news-topic').addEventListener('submit',function(e){
+document.getElementById('news-movie').addEventListener('submit',function(e){
   e.preventDefault();
   document.getElementById('filmresults').innerHTML+="";
-  var topic = document.querySelector('#news-topic input[type="text"]').value;
+  var topic = document.querySelector('#news-movie input[type="text"]').value;
   // console.log(topic);
   getFilmDeets(topic);
 });
