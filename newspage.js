@@ -1,15 +1,14 @@
-var getArticals = function(topic) {
+var getArticals = function(api, topic) {
   var req = new XMLHttpRequest();
   var parsed;
   var guardianAPI = "6509f558-5d11-416c-840b-78ccfb4a0837";
-  var url = "http://content.guardianapis.com/search?api-key=6509f558-5d11-416c-840b-78ccfb4a0837&q=" + topic + "&show-elements=all&show-fields=headline,thumbnail,body";
+  var url = "http://content.guardianapis.com/search?api-key=" + api + "&q=" + topic + "&show-elements=all&show-fields=headline,thumbnail,body";
 
   req.onreadystatechange = function () {
-    if (req.readyState === 4 && req.status === 200)   {
-      parsed = JSON.parse(req.response);
-      // var results = parseQuestionData(parsed.response.results);
-    }
+    if (req.readyState === 4 && req.status === 200) {
+      parsed = JSON.parse(req.response); }
   };
+
   req.open("GET", url, false);
   req.send();
   var arr = parsed.response.results;
@@ -19,39 +18,17 @@ var getArticals = function(topic) {
 document.getElementById('news-topic').addEventListener('submit',function(e){
   e.preventDefault();
   document.getElementById('results').innerHTML+="";
-  var topic = document.querySelector('#news-topic input[type="text"]').value;
-  // console.log(topic);
-  var resultsArray = getArticals(topic);
+  var topic = document.querySelector('#topic').value;
+  var api = document.querySelector('#api').value;
+  var resultsArray = getArticals(api, topic);
 });
 
 
 var appendArticlesToDOM = function(results) {
   results.forEach(function(el) {
-    document.write('<article>');
-    document.write('<h2>'+ el.webTitle +'</h2>');
-    // console.log(el.fields.body)
-    document.write('<p>'+ el.webPublicationDate +'</p>');
-    // document.write('<p>'+ el.date+'</p>');
-    document.write('</article>');
+    var d = el.webPublicationDate;
+    var date = d.replace('T', ' at ').replace('Z', '');
+    document.getElementById("results").innerHTML += "<article> <h2><a href=' " + el.webUrl + " '>" +
+    el.webTitle + "</a> </h2> <p class='date'> Published the " + date +"</p> <p class='content'>" + el.fields.body + "</p></article>";
   });
 };
-
-// var parseQuestionData = function(articles) {
-//     // var parsedResults = JSON.parse(articles.results);
-//
-//     // parsed.items.sort(function(a,b) {
-//     //     return a.owner.reputation - b.owner.reputation;
-//     // });
-//
-//     var result = [];
-//
-//     JSON.parse(articles).forEach(function(el) {
-//         result.push({
-//             title: el.webTitle,
-//             headline: el.fields.headline,
-//             content: el.fields.body,
-//         });
-//     });
-//     console.log(result);
-//     return result;
-// };
