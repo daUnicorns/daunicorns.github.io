@@ -1,4 +1,5 @@
 var getArticals = function(api, topic) {
+
   var req = new XMLHttpRequest();
   var parsed;
   var guardianAPI = "6509f558-5d11-416c-840b-78ccfb4a0837";
@@ -12,12 +13,15 @@ var getArticals = function(api, topic) {
   req.open("GET", url, false);
   req.send();
   var arr = parsed.response.results;
+
   appendArticlesToDOM(arr);
+
 };
 
 document.getElementById('news-topic').addEventListener('submit',function(e){
   e.preventDefault();
   document.getElementById('results').innerHTML+="";
+
   var topic = document.querySelector('#topic').value;
   var api = document.querySelector('#api').value;
   var resultsArray = getArticals(api, topic);
