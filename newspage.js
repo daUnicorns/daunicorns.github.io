@@ -20,7 +20,7 @@ var getArticals = function(api, movie) {
 
 document.getElementById('news-movie').addEventListener('submit',function(e){
   e.preventDefault();
-  document.getElementById('results').innerHTML+="";
+  document.getElementById('results').innerHTML ="";
   var movie = document.querySelector('#movie').value;
   var api = document.querySelector('#api').value;
   var resultsArray = getArticals(api, movie);
@@ -33,6 +33,6 @@ var appendArticlesToDOM = function(results) {
     var d = el.webPublicationDate;
     var date = d.replace('T', ' at ').replace('Z', '');
     document.getElementById("results").innerHTML += "<article> <p class='date'> Published the " + date +"</p> <h2 class='article-title'><a href=' " + el.webUrl + " '>" +
-    el.webTitle + "</a> </h2> <p class='content'>" + el.fields.body + "</p></article>";
+    el.webTitle + "</a> </h2> <div class='scroll'>" + el.fields.body + "</div></article>";
   });
 };

@@ -331,6 +331,8 @@ div:nth-child(3) > div.top > div {
   border: none;
   border-radius: 30px;
   text-shadow: 1px 1px black;
+  outline: none;
+  cursor: pointer;
 }
 
 #news-movie a {
@@ -352,16 +354,19 @@ div:nth-child(3) > div.top > div {
   font-weight: lighter;
 }
 
-.newsstory a { color: #F6B2B2; }
-
-.newsstory p { color: #225C79; }
+.newsstory a { color: purple; }
+.newsstorY .article-title { color: #F6B2B2; }
+.newsstory p {
+  color: #225C79;
+  line-height: 1.8em;
+}
 
 .newsstory .date {
     text-align: right;
     font-style: italic;
-    color: white;
+    color: #C38AAD;
     font-weight: bolder;
-    text-shadow: 1px 0px;
+    text-shadow: 0.8px 0px;
 }
 
 .readingnewspaper {
@@ -373,6 +378,10 @@ div:nth-child(3) > div.top > div {
   padding: 2em 4em;
   border-radius: 2em;
   background-color: rgba(195, 163, 182, 0.22);
+}
+.scroll {
+  height: 250px;
+  overflow: scroll;
 }
 .newsstory{
   margin:5% 15%;
@@ -390,11 +399,11 @@ div:nth-child(3) > div.top > div {
 }
 
 #filmdetails {
-  width: 40%;
+  width: 31%;
   display: inline-block;
   margin:auto;
   vertical-align: top;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 #leposter{
   vertical-align: top;
@@ -409,11 +418,25 @@ div:nth-child(3) > div.top > div {
 }
 
 #plot {
-  width: 20%;
+  width: 26%;
   display:inline-block;
   margin: auto;
   vertical-align: top;
 }
+
+#filmarticle #title {
+    color: purple;
+    text-transform: uppercase;
+    border-top-style: double;
+    text-align: center;
+    margin: 10px 0;
+    background: linear-gradient(rgba(162, 111, 164, 0.32), transparent);
+    height: 50px;
+    border-radius: 55px 55px 0 0;
+    padding-top: 5px;
+}
+
+#cast strong, #rating, #plot strong, #year strong, #genre strong { text-shadow: 0.5px 0; }
 
 /****************** media query ********************/
 
