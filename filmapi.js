@@ -17,13 +17,13 @@ var getFilmDeets = function (movie) {
 document.getElementById('news-movie').addEventListener('submit',function(e){
   e.preventDefault();
   document.getElementById('filmresults').innerHTML ="";
-  getFilmDeets(document.querySelector('#news-movie input[type="text"]').value);
+  getFilmDeets(document.querySelector('#movie').value);
 });
 
 // format the results to be appended to the DOM
   var appendFilmsToDOM = function(results) {
     // make the results into an array
-    var filmresults = new Array;
+    var filmresults = [];
     for(var o in results) {
       filmresults.push(results[o]);
     }

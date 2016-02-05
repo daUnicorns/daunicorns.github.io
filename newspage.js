@@ -29,8 +29,8 @@ document.getElementById('news-movie').addEventListener('submit',function(e){
 var appendArticlesToDOM = function(results) {
   var top4 = [ results[0], results[1], results[2], results[3] ];
   top4.forEach(function(el) {
-    var d = el.webPublicationDate;
-    var date = d.replace('T', ' at ').replace('Z', '');
+    var uglyDate = el.webPublicationDate;
+    var date = uglyDate.replace('T', ' at ').replace('Z', '');
     document.getElementById("results").innerHTML += "<article> <p class='date'> Published the " + date +"</p> <h2 class='article-title'><a target = '_blank' href=' " + el.webUrl + " '>" +
     el.webTitle + "</a> </h2> <div class='scroll'>" + el.fields.body + "</div></article>";
   });
