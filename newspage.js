@@ -2,7 +2,6 @@ var getArticals = function(api, movie) {
 
   var req = new XMLHttpRequest();
   var parsed;
-  var guardianAPI = "6509f558-5d11-416c-840b-78ccfb4a0837";
   var url = "http://content.guardianapis.com/search?api-key=" + api + "&q=" + movie + "&show-elements=all&show-fields=headline,thumbnail,body";
 
   req.onreadystatechange = function () {
