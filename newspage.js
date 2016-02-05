@@ -2,7 +2,6 @@ var getArticals = function(api, movie) {
 
   var req = new XMLHttpRequest();
   var parsed;
-  var guardianAPI = "6509f558-5d11-416c-840b-78ccfb4a0837";
   var url = "http://content.guardianapis.com/search?api-key=" + api + "&q=" + movie + "&show-elements=all&show-fields=headline,thumbnail,body";
 
   req.onreadystatechange = function () {
@@ -32,7 +31,7 @@ var appendArticlesToDOM = function(results) {
   top4.forEach(function(el) {
     var d = el.webPublicationDate;
     var date = d.replace('T', ' at ').replace('Z', '');
-    document.getElementById("results").innerHTML += "<article> <p class='date'> Published the " + date +"</p> <h2 class='article-title'><a href=' " + el.webUrl + " '>" +
+    document.getElementById("results").innerHTML += "<article> <p class='date'> Published the " + date +"</p> <h2 class='article-title'><a target = '_blank' href=' " + el.webUrl + " '>" +
     el.webTitle + "</a> </h2> <div class='scroll'>" + el.fields.body + "</div></article>";
   });
 };

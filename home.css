@@ -424,6 +424,8 @@ div:nth-child(3) > div.top > div {
   vertical-align: top;
 }
 
+article img { width: 100%; }
+
 #filmarticle #title {
     color: purple;
     text-transform: uppercase;
