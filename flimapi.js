@@ -1,3 +1,4 @@
+// grab the information on the film from the IMBD API
 var getFilmDeets = function (movie) {
   var xhr = new XMLHttpRequest();
   var parsedResponse;
@@ -6,32 +7,27 @@ var getFilmDeets = function (movie) {
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200)   {
       parsedResponse = JSON.parse(xhr.response);
-      // var results = parseQuestionData(parsed.response.results);
     }
   };
   xhr.open("GET", url, false);
   xhr.send();
-  var array = parsedResponse;
-  // console.log(array);
-  appendFilmsToDOM(array);
+  appendFilmsToDOM(parsedResponse);
 };
-
+// grab the movie search
 document.getElementById('news-movie').addEventListener('submit',function(e){
   e.preventDefault();
   document.getElementById('filmresults').innerHTML ="";
-  var movie = document.querySelector('#news-movie input[type="text"]').value;
-  // console.log(movie);
-  getFilmDeets(movie);
+  getFilmDeets(document.querySelector('#news-movie input[type="text"]').value);
 });
 
-
+// format the results to be appended to the DOM
   var appendFilmsToDOM = function(results) {
-    // console.log(results);
+    // make the results into an array
     var filmresults = new Array;
     for(var o in results) {
       filmresults.push(results[o]);
     }
-
+// formatting the HTML for the film results div
   document.getElementById("filmresults").innerHTML =
       "<article id = 'filmarticle'> <h1 id='title'> " +
       filmresults[0] + "</h1> <div id='poster'><img id = 'leposter' src='" + filmresults[13] + "'/></div> <div id='filmdetails'> <p id='year'><strong>Release Date :</strong> " +  filmresults[3] +
