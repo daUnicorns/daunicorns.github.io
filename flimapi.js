@@ -1,7 +1,7 @@
-var getFilmDeets = function (topic) {
+var getFilmDeets = function (movie) {
   var xhr = new XMLHttpRequest();
   var parsedResponse;
-  var url = "http://www.omdbapi.com/?t="+ topic;
+  var url = "http://www.omdbapi.com/?t="+ movie;
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200)   {
@@ -18,10 +18,10 @@ var getFilmDeets = function (topic) {
 
 document.getElementById('news-movie').addEventListener('submit',function(e){
   e.preventDefault();
-  document.getElementById('filmresults').innerHTML+="";
-  var topic = document.querySelector('#news-movie input[type="text"]').value;
-  // console.log(topic);
-  getFilmDeets(topic);
+  document.getElementById('filmresults').innerHTML ="";
+  var movie = document.querySelector('#news-movie input[type="text"]').value;
+  // console.log(movie);
+  getFilmDeets(movie);
 });
 
 
@@ -33,8 +33,9 @@ document.getElementById('news-movie').addEventListener('submit',function(e){
     }
 
     document.getElementById("filmresults").innerHTML =
-    "<article id = 'filmarticle'> <div id='poster'><img id = 'leposter' src='http://vignette3.wikia.nocookie.net/adventuretimewithfinnandjake/images/a/a9/Adventure-time-dance-5046_preview.gif/revision/latest?cb=20110617014146'/></div> <div id='filmdetails'> <h1 id='title'>" +
-    filmresults[0] + "</h1> <h2 id='year'>" +  filmresults[1] + "</h2> <p id='cast'><strong>Actors : </strong>" +
+    "<article id = 'filmarticle'> <h1 id='title'> " +
+    filmresults[0] + "</h1> <div id='poster'><img id = 'leposter' src='http://vignette3.wikia.nocookie.net/adventuretimewithfinnandjake/images/a/a9/Adventure-time-dance-5046_preview.gif/revision/latest?cb=20110617014146'/></div> <div id='filmdetails'> <p id='year'><strong>Release Date :</strong> " +  filmresults[3] +
+    "</p> <p id='genre'><strong>Genre :</strong> " + filmresults[4] + "</p> <p id='cast'><strong>Actors : </strong>" +
     filmresults[8] + "</p> <p id='rating'><strong>IMDB rating : </strong>"+ filmresults[15] +
      "</p> </div> <div id='plot'> <p id='plotcontent'><strong>Plot : </strong>" + filmresults[9] +
       "</p></div> </article>";
