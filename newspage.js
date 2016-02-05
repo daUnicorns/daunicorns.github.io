@@ -31,7 +31,7 @@ var appendArticlesToDOM = function(results) {
   top4.forEach(function(el) {
     var d = el.webPublicationDate;
     var date = d.replace('T', ' at ').replace('Z', '');
-    document.getElementById("results").innerHTML += "<article> <p class='date'> Published the " + date +"</p> <h2 class='article-title'><a href=' " + el.webUrl + " '>" +
+    document.getElementById("results").innerHTML += "<article> <p class='date'> Published the " + date +"</p> <h2 class='article-title'><a target = '_blank' href=' " + el.webUrl + " '>" +
     el.webTitle + "</a> </h2> <div class='scroll'>" + el.fields.body + "</div></article>";
   });
 };
