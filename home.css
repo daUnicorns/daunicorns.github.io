@@ -408,7 +408,7 @@ div:nth-child(3) > div.top > div {
 #leposter{
   vertical-align: top;
   border-radius: 2em;
-  height: 100%;
+  width: 100%;
   -webkit-animation: fadein infinite 10s;
 }
 @-webkit-keyframes fadein {
