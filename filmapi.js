@@ -7,23 +7,23 @@ var getFilmDeets = function (movie) {
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200)   {
       parsedResponse = JSON.parse(xhr.response);
+      appendFilmsToDOM(parsedResponse);
     }
   };
-  xhr.open("GET", url, false);
+  xhr.open("GET", url);
   xhr.send();
-  appendFilmsToDOM(parsedResponse);
 };
 // grab the movie search
 document.getElementById('news-movie').addEventListener('submit',function(e){
   e.preventDefault();
   document.getElementById('filmresults').innerHTML ="";
-  getFilmDeets(document.querySelector('#news-movie input[type="text"]').value);
+  getFilmDeets(document.querySelector('#movie').value);
 });
 
 // format the results to be appended to the DOM
   var appendFilmsToDOM = function(results) {
     // make the results into an array
-    var filmresults = new Array;
+    var filmresults = [];
     for(var o in results) {
       filmresults.push(results[o]);
     }
