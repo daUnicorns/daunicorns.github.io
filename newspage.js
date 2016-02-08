@@ -7,13 +7,13 @@ var getArticals = function(api, movie) {
   req.onreadystatechange = function () {
     if (req.readyState === 4 && req.status === 200) {
       parsed = JSON.parse(req.response); }
+      var arr = parsed.response.results;
+
+      appendArticlesToDOM(arr);
   };
 
-  req.open("GET", url, false);
+  req.open("GET", url);
   req.send();
-  var arr = parsed.response.results;
-
-  appendArticlesToDOM(arr);
 
 };
 

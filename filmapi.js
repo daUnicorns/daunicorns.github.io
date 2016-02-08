@@ -7,11 +7,11 @@ var getFilmDeets = function (movie) {
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200)   {
       parsedResponse = JSON.parse(xhr.response);
+      appendFilmsToDOM(parsedResponse);
     }
   };
-  xhr.open("GET", url, false);
+  xhr.open("GET", url);
   xhr.send();
-  appendFilmsToDOM(parsedResponse);
 };
 // grab the movie search
 document.getElementById('news-movie').addEventListener('submit',function(e){
